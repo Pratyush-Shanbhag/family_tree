@@ -21,13 +21,6 @@ class G2 extends StatelessWidget {
               children: <Widget>[
                 Container(
                   child: Icon(
-                    Icons.arrow_forward,
-                    size: 100,
-                  ),
-                  margin: EdgeInsets.only(top: 50),
-                ),
-                Container(
-                  child: Icon(
                     Icons.keyboard_arrow_down,
                     size: 100,
                   ),

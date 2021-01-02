@@ -4,6 +4,7 @@ class P extends StatelessWidget {
   @override
 
   String nextScreen = '';
+  bool isLeftSide = false;
 
   Widget build(BuildContext context) {
     Future<bool> _onBackPressed() {
@@ -14,16 +15,21 @@ class P extends StatelessWidget {
       onWillPop: _onBackPressed,
       child: GestureDetector(
         onPanStart: (DragStartDetails details) {
-          if(details.globalPosition.dx < MediaQuery.of(context).size.width/2)
-            nextScreen = '/3';
-          else
-            nextScreen = '/4';
+          isLeftSide = details.globalPosition.dx < MediaQuery.of(context).size.width/2;
         },
         onPanUpdate: (DragUpdateDetails details) {
-          if(details.delta.dy > 0)
-            Navigator.pushNamed(context, nextScreen);
-          else
-            Navigator.pushNamed(context, '/1');
+          if(details.delta.dy > 0) {
+            if(isLeftSide)
+              Navigator.pushNamed(context, '/3');
+            else
+              Navigator.pushNamed(context, '/4');
+          }
+          else {
+            if(isLeftSide)
+              Navigator.pushNamed(context, '/1');
+            else
+              Navigator.pushNamed(context, '/2');
+          }
         },
         child: Scaffold(
           backgroundColor: Color(0xFFCADCED),
@@ -32,7 +38,7 @@ class P extends StatelessWidget {
               children: <Widget>[
                 Container(
                   child: Icon(
-                    Icons.circle,
+                    Icons.keyboard_arrow_up,
                     size: 100,
                   ),
                   margin: EdgeInsets.only(top: 50),

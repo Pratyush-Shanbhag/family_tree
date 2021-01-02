@@ -31,13 +31,21 @@ class C1 extends StatelessWidget {
                   margin: EdgeInsets.only(top: 50),
                 ),
                 Container(
-                  child: CircleAvatar(
-                    radius: 25,
-                    backgroundColor: Colors.deepPurple,
-                    child: CircleAvatar(
-                      radius: 20,
-                      backgroundImage: AssetImage('assets/images/man.png'),
-                    ),
+                  child: Column(
+                    children: <Widget>[
+                      CircleAvatar(
+                        radius: 25,
+                        backgroundColor: Colors.deepPurple,
+                        child: CircleAvatar(
+                          radius: 20,
+                          backgroundImage: AssetImage('assets/images/man.png'),
+                        ),
+                      ),
+                      Text(
+                        'Prat',
+                        style: TextStyle(fontSize: 10),
+                      ),
+                    ],
                   ),
                 ),
               ],
