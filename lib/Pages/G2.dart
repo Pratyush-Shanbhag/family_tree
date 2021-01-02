@@ -12,7 +12,7 @@ class G2 extends StatelessWidget {
       child: GestureDetector(
         onPanUpdate: (DragUpdateDetails details) {
           if (details.delta.dy < 0)
-            Navigator.pushNamed(context, '/2');
+            Navigator.pushNamed(context, '/3');
         },
         child: Scaffold(
           backgroundColor: Color(0xFFCADCED),
@@ -20,11 +20,62 @@ class G2 extends StatelessWidget {
             child: Column(
               children: <Widget>[
                 Container(
+                  margin: EdgeInsets.only(top: 275),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Container(
+                        margin: EdgeInsets.only(right: 50),
+                        child: Column(
+                          children: <Widget>[
+                            CircleAvatar(
+                              radius: 80,
+                              backgroundColor: Colors.deepPurple,
+                              child: CircleAvatar(
+                                radius: 75,
+                                backgroundImage: AssetImage('assets/images/man.png'),
+                              ),
+                            ),
+                            SizedBox(
+                              height: 20,
+                            ),
+                            Text(
+                              'TA',
+                              style: TextStyle(fontSize: 20),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Container(
+                        child: Column(
+                          children: <Widget>[
+                            CircleAvatar(
+                              radius: 80,
+                              backgroundColor: Colors.deepPurple,
+                              child: CircleAvatar(
+                                radius: 75,
+                                backgroundImage: AssetImage('assets/images/woman.png'),
+                              ),
+                            ),
+                            SizedBox(
+                              height: 20,
+                            ),
+                            Text(
+                              'AM',
+                              style: TextStyle(fontSize: 20),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
                   child: Icon(
                     Icons.keyboard_arrow_down,
                     size: 100,
                   ),
-                  margin: EdgeInsets.only(bottom: 50),
+                  margin: EdgeInsets.only(top: 100),
                 ),
               ],
             ),

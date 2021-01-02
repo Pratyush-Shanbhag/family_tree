@@ -16,7 +16,7 @@ class C2 extends StatelessWidget {
       child: GestureDetector(
         onPanUpdate: (DragUpdateDetails details) {
           if(details.delta.dy > 0)
-            Navigator.pushNamed(context, '/2');
+            Navigator.pushNamed(context, '/3');
         },
         child: Scaffold(
           backgroundColor: Color(0xFFCADCED),
@@ -28,22 +28,25 @@ class C2 extends StatelessWidget {
                     Icons.keyboard_arrow_up,
                     size: 100,
                   ),
-                  margin: EdgeInsets.only(top: 50),
+                  margin: EdgeInsets.only(top: 50, bottom: 100),
                 ),
                 Container(
                   child: Column(
                     children: <Widget>[
                       CircleAvatar(
-                        radius: 25,
+                        radius: 120,
                         backgroundColor: Colors.deepPurple,
                         child: CircleAvatar(
-                          radius: 20,
+                          radius: 110,
                           backgroundImage: AssetImage('assets/images/man.png'),
                         ),
                       ),
+                      SizedBox(
+                        height: 20,
+                      ),
                       Text(
                         'Pish',
-                        style: TextStyle(fontSize: 10),
+                        style: TextStyle(fontSize: 20),
                       ),
                     ],
                   ),

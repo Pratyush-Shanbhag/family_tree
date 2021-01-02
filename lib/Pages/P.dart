@@ -20,9 +20,9 @@ class P extends StatelessWidget {
         onPanUpdate: (DragUpdateDetails details) {
           if(details.delta.dy > 0) {
             if(isLeftSide)
-              Navigator.pushNamed(context, '/3');
-            else
               Navigator.pushNamed(context, '/4');
+            else
+              Navigator.pushNamed(context, '/5');
           }
           else {
             if(isLeftSide)
@@ -41,14 +41,64 @@ class P extends StatelessWidget {
                     Icons.keyboard_arrow_up,
                     size: 100,
                   ),
-                  margin: EdgeInsets.only(top: 50),
+                  margin: EdgeInsets.only(top: 50, bottom: 125),
+                ),
+                Container(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Container(
+                        margin: EdgeInsets.only(right: 50),
+                        child: Column(
+                          children: <Widget>[
+                            CircleAvatar(
+                              radius: 80,
+                              backgroundColor: Colors.deepPurple,
+                              child: CircleAvatar(
+                                radius: 75,
+                                backgroundImage: AssetImage('assets/images/man.png'),
+                              ),
+                            ),
+                            SizedBox(
+                              height: 20,
+                            ),
+                            Text(
+                              'A',
+                              style: TextStyle(fontSize: 20),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Container(
+                        child: Column(
+                          children: <Widget>[
+                            CircleAvatar(
+                              radius: 80,
+                              backgroundColor: Colors.deepPurple,
+                              child: CircleAvatar(
+                                radius: 75,
+                                backgroundImage: AssetImage('assets/images/woman.png'),
+                              ),
+                            ),
+                            SizedBox(
+                              height: 20,
+                            ),
+                            Text(
+                              'M',
+                              style: TextStyle(fontSize: 20),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
                 Container(
                   child: Icon(
                     Icons.keyboard_arrow_down,
                     size: 100,
                   ),
-                  margin: EdgeInsets.only(bottom: 50),
+                  margin: EdgeInsets.only(top: 100),
                 ),
               ],
             ),
